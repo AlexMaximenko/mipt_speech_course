@@ -44,7 +44,7 @@ class QuartzNetBlock(torch.nn.Module):
         self.conv = nn.ModuleList()
         self._build_conv_blocks(kernel_size, feat_in, filters, stride, dilation, separable, dropout, repeat)
 
-        self.out = _get_act_dropout(dropout=dropout)
+        self.out = nn.Sequential(*_get_act_dropout(dropout=dropout))
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         if self.res:
