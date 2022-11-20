@@ -1,0 +1,3 @@
+asr/data/train_opus
+asr/data/test_ops
+./.gitignore
